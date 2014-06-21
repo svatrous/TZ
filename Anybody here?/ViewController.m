@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Reachability.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -18,7 +19,20 @@
 {
     [super viewDidLoad];
     
-    [self checkStatus];
+    //если подключение к интернету есть - получаем данные о текущем состоянии пользователя
+    
+    if ([self checkInternetConnection]) {
+        [self checkStatus];
+    }
+    
+    //иначе - выводим сообщение об ошибке и ставим счетчик на 0
+    
+    else {
+        [self setButtonParametrs:NO];
+        [_timeLabel setText:@"0:00:00"];
+    }
+    
+    
     
 }
 
@@ -32,7 +46,18 @@
 
 - (IBAction)changeStatusAction:(id)sender {
     
-    [self sendStatusToCloud:!_isOnline];
+    //проверяем наличие интернет - соединения
+    
+    if ([self checkInternetConnection]) {
+        [self sendStatusToCloud:!_isOnline];
+    }
+    
+    //при отсутствии выводим сообщение об ошибке
+    else {
+        [self showAlertView];
+    }
+    
+    
 }
 
 /*Проверяем статус пользователя при запуске программы */
@@ -421,6 +446,17 @@
     [cell.textLabel setText:[[_onlineUsersArray objectAtIndex:indexPath.row] objectAtIndex:0]];
     
     return cell;
+}
+
+/*Проверка наличия интернет подключения*/
+
+- (BOOL) checkInternetConnection {
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    if (networkStatus == NotReachable) {
+        return NO;
+    } else
+        return YES;
 }
 
 @end

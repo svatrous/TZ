@@ -33,6 +33,7 @@
 		6E711C511950501300F1DFB7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E711C501950501300F1DFB7 /* SystemConfiguration.framework */; };
 		6E711C531950AB4300F1DFB7 /* Затемнение.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E711C521950AB4300F1DFB7 /* Затемнение.png */; };
 		6EF319AC195363400048274A /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF319AA195363400048274A /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6EF319D51955E9C10048274A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF319C71955E9C00048274A /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		6E711C521950AB4300F1DFB7 /* Затемнение.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Затемнение.png"; sourceTree = "<group>"; };
 		6EF319A9195363400048274A /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		6EF319AA195363400048274A /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		6EF319C61955E9C00048274A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		6EF319C71955E9C00048274A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,7 @@
 		6E711C0F1950322300F1DFB7 /* Anybody here? */ = {
 			isa = PBXGroup;
 			children = (
+				6EF319B51955E9C00048274A /* Reachability */,
 				6EF319A8195363400048274A /* OpenUDID-master */,
 				6E711C181950322300F1DFB7 /* AppDelegate.h */,
 				6E711C191950322300F1DFB7 /* AppDelegate.m */,
@@ -206,6 +210,16 @@
 				6EF319AA195363400048274A /* OpenUDID.m */,
 			);
 			path = "OpenUDID-master";
+			sourceTree = "<group>";
+		};
+		6EF319B51955E9C00048274A /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				6EF319C61955E9C00048274A /* Reachability.h */,
+				6EF319C71955E9C00048274A /* Reachability.m */,
+			);
+			name = Reachability;
+			path = "Reachability 3/Reachability";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E711C201950322300F1DFB7 /* ViewController.m in Sources */,
+				6EF319D51955E9C10048274A /* Reachability.m in Sources */,
 				6EF319AC195363400048274A /* OpenUDID.m in Sources */,
 				6E711C1A1950322300F1DFB7 /* AppDelegate.m in Sources */,
 				6E711C161950322300F1DFB7 /* main.m in Sources */,
